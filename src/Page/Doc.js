@@ -22,15 +22,15 @@ const Doc = () => {
             <nav>
               <ul>
                 <li>
-                  <a className='text-primary' href='#'>
+                  <a className='text-primary' href='/'>
                     Introduction
                   </a>
                 </li>
                 <li>
-                  <a href='#'>About D & H</a>
+                  <a href='/'>About D & H</a>
                 </li>
                 <li>
-                  <a href='#'>Installation</a>
+                  <a href='/'>Installation</a>
                 </li>
               </ul>
             </nav>
@@ -38,16 +38,16 @@ const Doc = () => {
             <nav>
               <ul>
                 <li>
-                  <a href='#'>Introduction</a>
+                  <a href='/'>Introduction</a>
                 </li>
                 <li>
-                  <a href='#'>About D & H</a>
+                  <a href='/'>About D & H</a>
                 </li>
                 <li>
-                  <a href='#'>Installation</a>
+                  <a href='/'>Installation</a>
                 </li>
                 <li>
-                  <a href='#'>Deployment</a>
+                  <a href='/'>Deployment</a>
                 </li>
               </ul>
             </nav>
@@ -67,7 +67,7 @@ const Doc = () => {
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor,
               corrupti quod blanditiis consectetur laborum aliquid dolores.
             </p>
-            <a href='#' className='btn btn-primary'>
+            <a href='/' className='btn btn-primary'>
               Install CLi
             </a>
             <h3>Requirement</h3>

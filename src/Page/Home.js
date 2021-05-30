@@ -7,6 +7,26 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import CloudImg from './../images/cloud.png'
 import Img from './cli.png'
 const Home = () => {
+  function encode(data) {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&')
+  }
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': event.target.getAttribute('name'),
+        ...name,
+      }),
+    })
+      .then(() => navigate('/thank-you/'))
+      .catch((error) => alert(error))
+  }
   return (
     <>
       <section className='showcase'>
@@ -29,7 +49,7 @@ const Home = () => {
                 name='first-nForm'
                 method='post'
                 data-netlify='true'
-                onSubmit='submit'
+                onSubmit={handleSubmit}
                 data-netlify-honeypot='bot-field'
               >
                 <input type='hidden' name='form-name' value='first-nForm' />
