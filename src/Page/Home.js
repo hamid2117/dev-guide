@@ -7,26 +7,6 @@ import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import CloudImg from './../images/cloud.png'
 import Img from './cli.png'
 const Home = () => {
-  function encode(data) {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-      )
-      .join('&')
-  }
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': event.target.getAttribute('name'),
-        ...name,
-      }),
-    })
-      .then(() => navigate('/thank-you/'))
-      .catch((error) => alert(error))
-  }
   return (
     <>
       <section className='showcase'>
@@ -46,13 +26,13 @@ const Home = () => {
             <div className='card'>
               <h4>Request the demo</h4>
               <form
-                name='first-nForm'
+                name='contact'
                 method='post'
                 data-netlify='true'
-                onSubmit={handleSubmit}
+                action='/contact'
                 data-netlify-honeypot='bot-field'
               >
-                <input type='hidden' name='form-name' value='first-nForm' />
+                <input type='hidden' name='form-name' value='contact' />
                 <div hidden>
                   <input name='bot-field' />
                 </div>
